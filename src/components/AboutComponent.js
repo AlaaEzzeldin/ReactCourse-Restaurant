@@ -16,12 +16,12 @@ function About(props) {
     function RenderLeader({ leader }) {
         return (
             
-            <Media>
-                <Media  left>
-                    <Media object classname="align-self-start mr-3"  width="100%" src={leader.image} alt={leader.name} />
+            <Media tag="li">
+                <Media  left top middle className="mr-5 mt-0">
+                    <Media object  width="100%" src={leader.image} alt={leader.name} />
                 </Media>
 
-                <Media body classname="mt-0">
+                <Media body>
                     <Media heading>
                         <p> {leader.name}</p>
                     </Media>
