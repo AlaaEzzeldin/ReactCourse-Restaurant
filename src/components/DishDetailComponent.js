@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
     Card, CardImg, CardText, CardBody,
     CardTitle, Breadcrumb, BreadcrumbItem
 } from 'reactstrap';
+import CommentForm from './CommentForm';
 import { Link } from 'react-router-dom';
 
 
@@ -31,10 +32,8 @@ function RenderDish({ dish }) {
 
 
 function RenderComments({ comments }) {
-
     if (comments != null) {
         console.log("coments not null")
-
         const Comments = (comments).map((comment) => {
             return (
                 <div >
@@ -54,26 +53,19 @@ function RenderComments({ comments }) {
             </div>
         );
     }
-
-
     else {
         console.log("comments null")
         return (
             <div>
 
             </div >
-
         );
     }
-
 }
 
 const DishDetail = (props) => {
-
     if (props.dish !== null && props.dish !== undefined) {
-
         console.log("DishDetail  not null")
-
         return (
             <div className="container">
                 <div className="row">
@@ -92,23 +84,20 @@ const DishDetail = (props) => {
                     </div>
                     <div className="col-12 col-md-5 m-1">
                         <RenderComments comments={props.comments} />
+                        <CommentForm/>
                     </div>
                 </div>
             </div>
         );
     }
-
     else {
         console.log("null")
         return (
             <div>
 
             </div >
-
         );
     }
-
-
 }
 
 
